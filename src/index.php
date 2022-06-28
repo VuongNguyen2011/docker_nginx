@@ -1,18 +1,16 @@
-<?php 
-    if(isset($_GET['id']) && $_GET['id'] == "1" ){
-        echo $_GET['id'];
-    }
-    echo "nguyenDZ <br>";
-    $con = new mysqli('mysql_db_nginx','root','root','sinhvien');
-    if($con){
-        $result = $con->query("select * from sinhvien");
-        while($row = $result->fetch_assoc()){
-            echo "ID : ".$row["maSV"]."<br>";
-            echo "HoTen : ".$row["Ho"]." ".$row["TenLot"]." ".$row["Ten"]."\n";
-            echo "<button><a href='a.php'>Back <=</a></button>";
-        }
-    }else{
-        echo "Conetcted failed";
-    }
-    $con->close();
-?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="font-size: 50px;">
+        Nguyen dep trai
+    </p>
+    <button><a href="a.php?id=1">Go to ...</a></button>
+</body>
+</html>
